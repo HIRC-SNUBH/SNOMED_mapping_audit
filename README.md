@@ -31,8 +31,9 @@ Type 2 pairs are categorized by the direct hierarchical distance between the 2 c
 
 ## Requirements
 
-- An OMOP CDM database (PostgreSQL) with the OMOP standardized vocabularies, including SNOMED CT and ICD-10
-- Python 3 with `pandas`, `numpy`, and `psycopg2`
+- An OMOP CDM database with the OMOP standardized vocabularies, including SNOMED CT and ICD-10
+- Python 3 (`pandas`, `numpy`)
+- A database connection: the notebook connects to PostgreSQL via `psycopg2`. For other database systems, replace the connection in the first code cell with the corresponding driver.
 
 ## Input data
 
