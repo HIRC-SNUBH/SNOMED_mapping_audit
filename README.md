@@ -41,10 +41,10 @@ The code uses standard OMOP CDM tables only.
 
 | Table | Use |
 |---|---|
-| `condition_occurrence` | Clinical table of diagnosis records. Local diagnosis codes recorded in `condition_source_value` are used, restricted to records whose `condition_source_concept_id` belongs to the ICD10 vocabulary. |
-| `source_to_concept_map` | Local mappings: `source_code` (local diagnosis code), `source_concept_id` (ICD-10 concept of the local term), `target_concept_id` (locally mapped SNOMED CT concept). Only source codes recorded in `condition_occurrence.condition_source_value` are used. |
+| `condition_occurrence` | Clinical table of diagnosis records. Local diagnosis codes recorded in `condition_source_value` are used. |
+| `source_to_concept_map` | Local mappings: `source_code` (local diagnosis code), `source_concept_id` (ICD-10 concept of the local term), `target_concept_id` (locally mapped SNOMED CT concept). <br>Restricted to mappings whose `source_concept_id` belongs to the ICD10 vocabulary; only source codes recorded in `condition_occurrence.condition_source_value` are used. |
 | `concept` | Vocabulary table of all concepts and their attributes. Used for vocabulary, standard status, and concept names. |
-| `concept_relationship` | Vocabulary table of direct relationships between concepts. Used for ICD-10 `Maps to` relationships and SNOMED CT attribute relationships. |
+| `concept_relationship` | Vocabulary table of direct relationships between concepts. Used for ICD-10-to-SNOMED CT `Maps to` relationships and SNOMED CT attribute relationships. |
 | `concept_ancestor` | Vocabulary table of hierarchical ancestor–descendant relationships with levels of separation. Used for the SNOMED CT hierarchy. |
 
 ## Usage
